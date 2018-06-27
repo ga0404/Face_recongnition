@@ -53,7 +53,8 @@ model.add(Flatten())
 model.add(Dense(128, activation='relu'))
 #model.add(Dropout(0.5))
 model.add(Dense(51, activation='softmax'))
-
+print(" Model summary:")  
+model.summary()
 model.compile(loss=keras.losses.categorical_crossentropy,
               optimizer=keras.optimizers.Adadelta(),
               metrics=['accuracy'])
