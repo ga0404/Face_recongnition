@@ -40,9 +40,11 @@ model = Sequential()
 model.add(Conv2D(16, 3, activation="relu", input_shape=(240, 180, 3)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
+
 model.add(Conv2D(32, 3, activation="relu"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
+
 model.add(Conv2D(64, 3, activation="relu"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
@@ -62,6 +64,7 @@ train_history=model.fit(Train_Data, Train_Label,
           verbose=1,
           shuffle=True,
           validation_data=(Test_Data, Test_Label))
+model.save('train_model.h5')
 score = model.evaluate(Test_Data, Test_Label, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
