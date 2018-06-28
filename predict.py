@@ -51,8 +51,13 @@ for i in range(len(result[0])):
     result_dict[i] = float(result[0][i])
 sorted_result_dict = sorted(result_dict.items(), key=operator.itemgetter(1), reverse=True)
 cnt = 0
+
 print("\nPredict Answer:")
-print(sorted_result_dict[0][0])
+if(sorted_result_dict[0][0]<10):
+    print("0"+str(sorted_result_dict[0][0]))
+else:
+    print(sorted_result_dict[0][0])
+
 print('\nTop 5 candidate: ')
 for tp in sorted_result_dict:
     cnt += 1
