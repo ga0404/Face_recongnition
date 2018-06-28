@@ -13,7 +13,7 @@ import numpy as np
 import operator
 import sys
 
-print(print("\n".join(sys.argv)))
+#print(print("\n".join(sys.argv)))
 
 import keras
 from keras.models import Sequential
@@ -25,7 +25,11 @@ from sklearn.utils import shuffle
 X = []
 Y = []
 
-fullpath = str(sys.argv[1])
+#fullpath = str(sys.argv[1])
+print("\nPlease input data name:")
+path=input()
+fullpath=("./Face Database/"+path)
+print(fullpath)
 
 X = mpimg.imread(fullpath) / 255 * 2 - 1
 X = X[np.newaxis, ...]
